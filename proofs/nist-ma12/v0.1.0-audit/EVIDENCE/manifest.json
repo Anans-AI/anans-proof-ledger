@@ -1,0 +1,49 @@
+{
+  "build_timestamp_utc": "2026-02-24T20:50:42Z",
+  "compiler_version": "evidence_compiler_v2",
+  "files": [
+    {
+      "path": "MA12_NIST_DISC.json",
+      "sha256": "758d867e181774cecebff7da73d8cfd8f77bb67bdcb56c093d1e116ae2122a44"
+    },
+    {
+      "path": "NIST_MAPPING.json",
+      "sha256": "38cbfa467d2ff22dd6793b046a074bec934e69ca6bbf1a63ead709000cece299"
+    },
+    {
+      "path": "VERIFY.py",
+      "sha256": "f5d71def6acfe00e851cc6217148e3098939a41023b71f774200145396134ac8"
+    },
+    {
+      "path": "forbidden_action_attempt.json",
+      "sha256": "d3cbf22c24a7cbffc7adf9c652eb7720a4c0d18a68ebbdefef36111508b3ca62"
+    },
+    {
+      "path": "openclaw/final_report.json",
+      "sha256": "1a30fc6ed86d0894857eb84369f32dad6269c9141d2f2fbe26b8c344cee18f29"
+    },
+    {
+      "path": "openclaw/shared_manifest.json",
+      "sha256": "7e0e7082d76c52232d09018f6679c6caa63f019daf5cb2530159515200ce2dd0"
+    },
+    {
+      "path": "openclaw/verify_result.json",
+      "sha256": "3c927629c5b3fb3ade5336ebaa1add0c89fbc019c2294da0e7503601131c75fa"
+    },
+    {
+      "path": "receipt.json",
+      "sha256": "e85fca6d5b32da6f9dc6ad44d1335af707583171f6cfc5b308862fadacd98d4a"
+    },
+    {
+      "path": "robustness.json",
+      "sha256": "8e50ca99f52efa77a05076a2bcdc2dd2b08db99c5c4fca30acec8aa8636bc0fc"
+    }
+  ],
+  "git_commit": "",
+  "manifest_version": 1,
+  "mode": "v1",
+  "profile": "nist_ma12_disc",
+  "run_dir_basename": "nist_ma12_disc",
+  "run_id": "nist_ma12_disc",
+  "schema_ids": []
+}

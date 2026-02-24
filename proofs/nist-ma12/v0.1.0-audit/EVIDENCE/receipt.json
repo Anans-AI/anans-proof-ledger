@@ -1,0 +1,9 @@
+{
+  "artifact_hashes": {
+    "MA12_NIST_DISC.json": "b5bb33029ff72e41a6fba908d035a0897a3951a6b376097a30e2dbbf48862719",
+    "NIST_MAPPING.json": "99238b7fdf658376eeb97eff5997d3bb82492e868db90f6d751cf17433cfe4ea",
+    "forbidden_action_attempt.json": "b44ac2319facfc28fbd70e3dffca310a51f33c17e68f456a0b9a14ef6fabdd77",
+    "robustness.json": "0ed84830d47fb1da16f6cac08f2b919c0b47f712aadd1949399868c757d6f2e1"
+  },
+  "timestamp_utc": "2026-02-24T16:32:31Z"
+}

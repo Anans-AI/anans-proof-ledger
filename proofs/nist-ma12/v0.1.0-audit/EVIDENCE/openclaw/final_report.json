@@ -1,0 +1,63 @@
+{
+  "artifacts": {
+    "hashes": {
+      "asot/asot_openclaw_adapter.jsonl": "346b1c38e4a30e391397ee680a7502946c4f7496ad42007cd2d1400e7a6b8479"
+    },
+    "paths": [
+      "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/final_report.json",
+      "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/B_catastrophe/attack_bundle.json",
+      "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/joint/cts_context.json",
+      "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/joint/robustness.json",
+      "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/joint/shared_manifest.json",
+      "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/receipt.json",
+      "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/verify_result.json"
+    ]
+  },
+  "asot": {
+    "attack_asot_ids": [
+      "ASOT-OC-001",
+      "ASOT-OC-002",
+      "ASOT-OC-003",
+      "ASOT-OC-004",
+      "ASOT-OC-005",
+      "ASOT-OC-006"
+    ],
+    "registry_path": "asot/asot_openclaw_adapter.jsonl",
+    "registry_sha256": "346b1c38e4a30e391397ee680a7502946c4f7496ad42007cd2d1400e7a6b8479"
+  },
+  "cts": {
+    "attack_count": 6,
+    "distinct_categories": 6,
+    "overlap_ratio": 0.0,
+    "pass": true
+  },
+  "falsifiers": [
+    {
+      "evidence": [],
+      "id": "FALSIFY_CTS_TRIVIAL",
+      "triggered": false
+    },
+    {
+      "evidence": [],
+      "id": "FALSIFY_ROBUSTNESS_FAIL",
+      "triggered": false
+    }
+  ],
+  "meta": {
+    "test_mode": false
+  },
+  "metrics": {
+    "adapter_calls": 0,
+    "attacks_generated": 6,
+    "promoted_patches": 0
+  },
+  "robustness": {
+    "attack_tests_generated": 6,
+    "attack_tests_passed": 6,
+    "attack_tests_run": 6,
+    "status": "PASS"
+  },
+  "run_id": "20260224T163229Z",
+  "status": "PASS",
+  "timestamp_utc": "2026-02-24T16:32:31Z"
+}

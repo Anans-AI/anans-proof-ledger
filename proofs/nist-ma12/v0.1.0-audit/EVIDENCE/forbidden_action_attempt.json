@@ -1,0 +1,32 @@
+{
+  "decision": {
+    "details": "privileged tool requires consent token",
+    "reason_code": "MISSING_CONSENT",
+    "status": "DENY"
+  },
+  "pass": true,
+  "request": {
+    "actor": {
+      "dm_scope": "isolated",
+      "session_id": "NIST-S1"
+    },
+    "arguments": {
+      "content": "attempt",
+      "path": "src/forbidden.txt"
+    },
+    "consent": {},
+    "context_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "policy_profile": "enterprise_strict_v1",
+    "request_id": "NIST-REQ-001",
+    "source": {
+      "channel": "dm",
+      "origin": "dm"
+    },
+    "timestamp_utc": "2026-02-24T16:32:31Z",
+    "tool": "write_file"
+  },
+  "result": {
+    "executed": false,
+    "reason": "MISSING_CONSENT"
+  }
+}

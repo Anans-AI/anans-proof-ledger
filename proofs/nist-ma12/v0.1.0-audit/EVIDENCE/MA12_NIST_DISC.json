@@ -1,0 +1,14 @@
+{
+  "authority": "NIST AI Risk Management Framework",
+  "disc_type": "MA12_NIST_AI_RMF",
+  "evidence": {
+    "forbidden_action_attempt_sha256": "b44ac2319facfc28fbd70e3dffca310a51f33c17e68f456a0b9a14ef6fabdd77",
+    "mapping_sha256": "99238b7fdf658376eeb97eff5997d3bb82492e868db90f6d751cf17433cfe4ea",
+    "openclaw_run_report_sha256": "aefbe277eb95982cdf6ed855ffa05d6ce60aaac6e926947eb7597be1f8dff91a",
+    "openclaw_run_verify_sha256": "34f9a9bbcfe6a8cee6016bd87e799d10b02e79de66df757a7689a6cd629c2e4e",
+    "robustness_sha256": "0ed84830d47fb1da16f6cac08f2b919c0b47f712aadd1949399868c757d6f2e1"
+  },
+  "merkle_root": "a44580127d064018ea3863be07122155048b6b765644f3868bd89c96c5939cd7",
+  "status": "VERIFIED",
+  "timestamp": "2026-02-24T16:32:31Z"
+}
