@@ -1,0 +1,8 @@
+{
+  "executed_test_count": 6,
+  "forbidden_action_denied": true,
+  "mandate_id": "MINED-NIST-001",
+  "openclaw_verifier_pass": true,
+  "selected_constraint_id": "CONSTRAINT-004",
+  "status": "PASS"
+}

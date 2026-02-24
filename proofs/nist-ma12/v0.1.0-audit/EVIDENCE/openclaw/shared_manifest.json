@@ -1,0 +1,54 @@
+{
+  "artifact_hashes": {
+    "B_catastrophe/attack_bundle.json": "bce9276f545e94cee2d64fbc169611bd1f27f734463126df0a778f39d6c36253",
+    "B_catastrophe/negative_tests/test_asot_oc_001_batch_smuggling.py": "06905aba0a9e3efb1a4f369e5f0be701fc38c01767c0fe6d081d094c56c36203",
+    "B_catastrophe/negative_tests/test_asot_oc_002_policy_drift.py": "d7728472f785f716ff522a66153ca154164ce4c476c643c4f00944731fc79fc1",
+    "B_catastrophe/negative_tests/test_asot_oc_003_consent_bypass.py": "708a0495fa081146964d46a0223f71ddea5c2b5f3954d8343aa5f75683c91e2e",
+    "B_catastrophe/negative_tests/test_asot_oc_004_replay_reorder.py": "36f8bacfc30ab6c92b0978c8034bc93de950d3a7e20e83fa5d971c67a03cc76b",
+    "B_catastrophe/negative_tests/test_asot_oc_005_skill_admission.py": "19b56d05e0a31f035982d640a02902a669dc676e13745ccbd869c40effa54ebf",
+    "B_catastrophe/negative_tests/test_asot_oc_006_evidence_tamper.py": "f4e4c774d85f38307221d3e9de0785f7d75849633c7152ef39868459b26d5e30",
+    "final_report.json": "aefbe277eb95982cdf6ed855ffa05d6ce60aaac6e926947eb7597be1f8dff91a",
+    "joint/cts_context.json": "7c4fafa803ed435e8dee56c89d2dfb5f52642014847b3beecc2c8350c360a2b3",
+    "joint/robustness.json": "d124435fba8b0383e5eee7c448415bc5f71376d194a45c7eefefb8045675344b",
+    "joint/shared_manifest.json": "b40a47923d2bc51f3d4d9ee54819d60dc41ffc7472d719fe8da20932f002fe41",
+    "receipt.json": "0b926c1ff73a398ed21fadf18d73b647febad1905fa05e76a0396897b338e7de",
+    "verify_result.json": "34f9a9bbcfe6a8cee6016bd87e799d10b02e79de66df757a7689a6cd629c2e4e"
+  },
+  "executed_tests": [
+    {
+      "asot_id": "ASOT-OC-001",
+      "category": "batch_smuggling",
+      "file": "B_catastrophe/negative_tests/test_asot_oc_001_batch_smuggling.py"
+    },
+    {
+      "asot_id": "ASOT-OC-002",
+      "category": "policy_drift",
+      "file": "B_catastrophe/negative_tests/test_asot_oc_002_policy_drift.py"
+    },
+    {
+      "asot_id": "ASOT-OC-003",
+      "category": "consent_bypass",
+      "file": "B_catastrophe/negative_tests/test_asot_oc_003_consent_bypass.py"
+    },
+    {
+      "asot_id": "ASOT-OC-004",
+      "category": "replay_reorder",
+      "file": "B_catastrophe/negative_tests/test_asot_oc_004_replay_reorder.py"
+    },
+    {
+      "asot_id": "ASOT-OC-005",
+      "category": "skill_admission",
+      "file": "B_catastrophe/negative_tests/test_asot_oc_005_skill_admission.py"
+    },
+    {
+      "asot_id": "ASOT-OC-006",
+      "category": "evidence_tamper",
+      "file": "B_catastrophe/negative_tests/test_asot_oc_006_evidence_tamper.py"
+    }
+  ],
+  "pins": {
+    "asot_registry_sha256": "346b1c38e4a30e391397ee680a7502946c4f7496ad42007cd2d1400e7a6b8479"
+  },
+  "run_id": "20260224T163229Z",
+  "timestamp_utc": "2026-02-24T16:32:29Z"
+}

@@ -1,0 +1,23 @@
+{
+  "authority": "NIST_AI_RMF_GOVERN_1_2",
+  "evidence_artifacts": {
+    "forbidden_action_attempt": "artifacts/nist_ma12_disc/forbidden_action_attempt.json",
+    "openclaw_final_report": "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/final_report.json",
+    "openclaw_run_dir": "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z",
+    "openclaw_shared_manifest": "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/joint/shared_manifest.json",
+    "openclaw_verify_result": "artifacts/prometheus_openclaw_adapter_stress_001/20260224T163229Z/verify_result.json"
+  },
+  "executed_test_ids": [
+    "ASOT-OC-001",
+    "ASOT-OC-002",
+    "ASOT-OC-003",
+    "ASOT-OC-004",
+    "ASOT-OC-005",
+    "ASOT-OC-006"
+  ],
+  "mandate_id": "MINED-NIST-001",
+  "mapping_id": "NIST_MAPPING_001",
+  "selected_constraint_description": "Any deviation from standard policy must result in a denied action",
+  "selected_constraint_id": "CONSTRAINT-004",
+  "timestamp_utc": "2026-02-24T16:32:31Z"
+}
