@@ -1,12 +1,13 @@
-# ANANS Proof Ledger
+# Proof Ledger
 
-This repository contains **sterile, offline-verifiable evidence bundles**.
+**Maintainer:** Garth Noel
+**Organisation:** [Anans-AI](https://github.com/Anans-AI)
 
-Each bundle is cryptographically sealed: a manifest records the SHA-256 hash
-of every evidence file, and the manifest itself is signed with an Ed25519 key
-whose public half ships as `enforcement.pub` inside the bundle.
+This repository contains sterile, offline-verifiable evidence bundles produced
+by the Anans governance system. Each bundle is cryptographically sealed and
+ships with a self-contained verifier — no internet access required.
 
-## How to Verify a Bundle
+## How to Verify
 
 ```
 cd proofs/<proof-id>/<version>/EVIDENCE
@@ -19,6 +20,18 @@ Expected output: `VERIFY PASS`
 Any other output is a hard failure. See the per-proof `VERIFY.md` for the
 full failure-mode table and tamper-resistance tests.
 
+## How It Works
+
+Each bundle contains:
+
+- `manifest.json` — canonical SHA-256 index of every evidence file
+- `manifest.sig` — Ed25519 signature over `manifest.json` bytes
+- `enforcement.pub` — verifying public key (no private key in repo)
+- `VERIFY.py` — self-contained verifier (stdlib + pynacl only)
+
+The verifier is fail-closed: any signature or hash mismatch exits non-zero
+with a `FAIL_CLOSED:` message. There is no partial-pass state.
+
 ## Repository Layout
 
 ```
@@ -26,12 +39,12 @@ proofs/
   <proof-id>/
     <version>/
       EVIDENCE/
-        manifest.json       # canonical file-hash index + metadata
-        manifest.sig        # Ed25519 signature over manifest.json bytes
-        enforcement.pub     # verifying public key (no private key in repo)
-        VERIFY.py           # self-contained verifier (no internet required)
+        manifest.json
+        manifest.sig
+        enforcement.pub
+        VERIFY.py
         <evidence files>
-      VERIFY.md             # human-readable verification guide
+      VERIFY.md
 ```
 
 ## Available Proofs
@@ -42,8 +55,8 @@ proofs/
 
 ## Guarantee
 
-This repo publishes evidence bundles and portable verifiers only.
+This repository publishes evidence bundles and portable verifiers only.
 No proprietary source code or private keys are included.
 
 A signed manifest that does not match the committed files is treated as a
-hard stop — equivalent to tampering — and must not be released.
+hard stop — equivalent to tampering — and will not be released.
