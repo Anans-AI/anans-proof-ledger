@@ -1,36 +1,41 @@
-# Proof Ledger
+# Offline Verification Governance Bundles
 
-**Maintainer:** Garth Noel
-**Organisation:** [Anans-AI](https://github.com/Anans-AI)
+Maintainer: **Garth Noel**
 
-This repository contains sterile, offline-verifiable evidence bundles produced
-by the Anans governance system. Each bundle is cryptographically sealed and
-ships with a self-contained verifier — no internet access required.
+This repository publishes **sterile, offline-verifiable evidence bundles** and
+portable verifiers only. It is a standalone proof container for **fail-closed**
+verification of signed manifests and evidence hashes.
 
-## How to Verify
+## What this repository is
+
+- Verified evidence artifacts from bounded runs (JSON payloads + portable verifier).
+- Designed for offline falsification: you can validate integrity without trusting
+  claims or infrastructure.
+
+## What this repository is not
+
+- Not a blockchain ledger or transparency log.
+- Not OS-level containment.
+- Not blanket regulatory compliance.
+- Not a live governance platform or runtime agent framework.
+
+## How to verify (cold)
+
+1. Download a proof bundle (zip asset or proof folder).
+2. Unzip into an empty directory.
+3. From inside the extracted directory, run:
 
 ```
-cd proofs/<proof-id>/<version>/EVIDENCE
-pip install pynacl          # one-time dependency
 python VERIFY.py --evidence_dir .
 ```
 
 Expected output: `VERIFY PASS`
 
-Any other output is a hard failure. See the per-proof `VERIFY.md` for the
-full failure-mode table and tamper-resistance tests.
+## Falsifiability
 
-## How It Works
-
-Each bundle contains:
-
-- `manifest.json` — canonical SHA-256 index of every evidence file
-- `manifest.sig` — Ed25519 signature over `manifest.json` bytes
-- `enforcement.pub` — verifying public key (no private key in repo)
-- `VERIFY.py` — self-contained verifier (stdlib + pynacl only)
-
-The verifier is fail-closed: any signature or hash mismatch exits non-zero
-with a `FAIL_CLOSED:` message. There is no partial-pass state.
+- Flip a single byte in any evidence file and rerun VERIFY. It must **FAIL_CLOSED**.
+- Flip a single byte in `manifest.json` and rerun VERIFY. Signature verification
+  must **FAIL_CLOSED**.
 
 ## Repository Layout
 
@@ -52,11 +57,3 @@ proofs/
 | Proof | Version | Description |
 |---|---|---|
 | `nist-ma12` | `v0.1.0-audit` | NIST SP 800-53 MA-12 maintenance discipline evidence |
-
-## Guarantee
-
-This repository publishes evidence bundles and portable verifiers only.
-No proprietary source code or private keys are included.
-
-A signed manifest that does not match the committed files is treated as a
-hard stop — equivalent to tampering — and will not be released.

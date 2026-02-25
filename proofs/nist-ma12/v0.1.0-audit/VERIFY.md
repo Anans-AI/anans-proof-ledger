@@ -1,41 +1,41 @@
-# Verification Guide — NIST MA-12 Audit Bundle v0.1.0-audit
+# Verification Guide — NIST MA12 Proof Bundle (v0.1.0-audit)
 
-## Prerequisites
+## Scope
 
-- Python 3.8 or later
-- `pynacl` library: `pip install pynacl`
+This proof bundle is an **offline-verifiable evidence container** demonstrating
+deterministic, fail-closed denial of a forbidden action attempt under a mapped
+NIST-derived constraint.
 
-No other dependencies. The verifier is self-contained.
+## What this is not
 
-## How to Verify
+- Not a blockchain ledger or transparency log.
+- Not OS-level containment.
+- Not blanket regulatory compliance.
+- Not a live agent runtime.
 
-From the repository root:
+## Cold verification (recommended)
+
+1. Download the zip asset for this proof bundle.
+2. Unzip into an empty directory.
+3. From inside the extracted directory, run:
 
 ```
-cd proofs/nist-ma12/v0.1.0-audit/EVIDENCE
 python VERIFY.py --evidence_dir .
 ```
 
-Expected output on a valid bundle:
+Expected: `VERIFY PASS`
 
-```
-VERIFY PASS
-```
+## Falsifiability / negative tests
 
-## What the Verifier Checks
+1. Evidence tamper:
+   - Flip one byte in any evidence JSON (e.g., `robustness.json`)
+   - Rerun VERIFY → must `FAIL_CLOSED: hash mismatch`
 
-1. **Signature** — Loads `enforcement.pub` and verifies the Ed25519 signature in
-   `manifest.sig` over the canonical bytes of `manifest.json`. A tampered manifest
-   or wrong public key produces `FAIL_CLOSED: signature invalid`.
+2. Manifest tamper:
+   - Flip one byte in `manifest.json`
+   - Rerun VERIFY → must `FAIL_CLOSED: manifest signature verification failed`
 
-2. **File hashes** — For every file listed in `manifest.json`, recomputes its
-   SHA-256 and compares it against the recorded value. Any file modified after
-   signing produces `FAIL_CLOSED: hash mismatch: <filename>`.
-
-The verifier is intentionally fail-closed: any error exits with a non-zero code
-and a `FAIL_CLOSED:` message. There is no partial-pass state.
-
-## Failure Modes and Meaning
+## Failure Modes
 
 | Output | Meaning |
 |---|---|
@@ -44,40 +44,11 @@ and a `FAIL_CLOSED:` message. There is no partial-pass state.
 | `FAIL_CLOSED: hash mismatch: <file>` | Named file was altered after the manifest was signed |
 | `FAIL_CLOSED: missing file: <file>` | A file listed in the manifest is absent |
 
-A signed manifest that does not match the committed files is **worse than
-unsigned** — it signals either a staging mistake (wrong file set committed)
-or a post-sign overwrite. Do not treat such a bundle as authoritative.
+## Dependencies
 
-## Negative Tests (Tamper Resistance)
-
-To confirm the verifier catches tampering:
-
-```bash
-# 1. Tamper with a file — must fail
-echo "x" >> MA12_NIST_DISC.json
-python VERIFY.py --evidence_dir .
-# Expected: FAIL_CLOSED: hash mismatch: MA12_NIST_DISC.json
-
-# Restore
-git checkout -- MA12_NIST_DISC.json
-
-# 2. Tamper with the manifest — must fail
-echo "x" >> manifest.json
-python VERIFY.py --evidence_dir .
-# Expected: FAIL_CLOSED: signature invalid
-
-# Restore
-git checkout -- manifest.json
-
-# 3. Clean restore — must pass
-python VERIFY.py --evidence_dir .
-# Expected: VERIFY PASS
-```
-
-## Key Provenance
-
-The `enforcement.pub` public key was generated and held by the bundle author.
-No private key material is included in this repository.
+- Python 3.x
+- PyNaCl required for v1 signature verification (Ed25519). If PyNaCl is missing,
+  signature checks cannot run.
 
 ## Bundle Metadata
 
