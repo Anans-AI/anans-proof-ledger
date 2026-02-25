@@ -1,4 +1,4 @@
-﻿# ANANS Proof Ledger
+﻿# Governance Proof Ledger
 
 This repository contains **sterile, offline-verifiable evidence bundles**.
 
